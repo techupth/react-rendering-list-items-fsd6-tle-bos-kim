@@ -7,34 +7,39 @@ function MovieList() {
       {movies.map((item, index) => {
         return (
           <div className="card-container">
-            <img className="movie-img" key={index} src={item["image"]}></img>
+            <img
+              className="movie-img"
+              key={index}
+              src={item["image"]}
+              alt={item["title"]}
+            ></img>
             <div className="movie-detail">
-              <div className="movie-title" key={index}>
-                Title:
+              <p className="movie-title" key={index}>
+                {`Title: `}
                 {item["title"]}
-              </div>
-              <div className="movie-year" key={index}>
-                Year:
+              </p>
+              <p className="movie-year" key={index}>
+                {`Year: `}
                 {item["year"]}
-              </div>
-              <div className="movie-runtime" key={index}>
-                Runtime:
+              </p>
+              <p className="movie-runtime" key={index}>
+                {`Runtime: `}
                 {item["runtime"]}
-              </div>
-              <div className="movie-genres" key={index}>
-                Genres:
+              </p>
+              <p className="movie-genres" key={index}>
+                {`Genres: `}
                 {item["genres"].map((type) => {
                   return <button className="movie-genres-type">{type}</button>;
                 })}
-              </div>
-              <div className="movie-imdb-ratings" key={index}>
-                IMDB Ratings:
+              </p>
+              <p className="movie-imdb-ratings" key={index}>
+                I{`MDB Ratings: `}
                 {item["imdbRating"]}
-              </div>
-              <div className="movie-imdb-votes" key={index}>
-                IMDB Votes:
+              </p>
+              <p className="movie-imdb-votes" key={index}>
+                {`IMDB Votes: `}
                 {item["imdbVotes"]}
-              </div>
+              </p>
             </div>
           </div>
         );
