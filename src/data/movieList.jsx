@@ -2,13 +2,8 @@
 import { css } from "@emotion/react";
 import movies from "./movies";
 import "./movieList.css";
-import firstImage from "./images/Movie Image3.png";
-import secondImage from "./images/Movie Image.png";
-import thridImage from "./images/Movie Image2.png";
 
 function MovieList() {
-  let count = -1;
-  let images = [firstImage, secondImage, thridImage];
   return (
     <div className="mainContent">
       <h1
@@ -22,12 +17,7 @@ function MovieList() {
         Movie List Section
       </h1>
       {movies.map((movie, index) => {
-        if (
-          movie.title === "Assassin's Creed" ||
-          movie.title === "Luke Cage" ||
-          movie.title === "Doctor Strange"
-        ) {
-          count++;
+        {
           return (
             <div
               key={index}
@@ -41,8 +31,8 @@ function MovieList() {
               `}
             >
               <img
-                src={images[count]}
-                alt={images[count]}
+                src={movie.image}
+                alt={movie.title}
                 width={102}
                 height={100}
               />
