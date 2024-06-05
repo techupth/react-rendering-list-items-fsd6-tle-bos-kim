@@ -22,7 +22,6 @@ function MovieList() {
             <div
               key={index}
               css={css`
-                width: 400px;
                 height: 250px;
                 padding: 10px;
                 display: flex;
@@ -50,30 +49,28 @@ function MovieList() {
                 <span>
                   Genres:
                   {movie.genres.map((genre, indexx) => {
-                    if (indexx < 2) {
-                      return (
+                    return (
+                      <span
+                        key={indexx}
+                        css={css`
+                          margin: 0 5px;
+                          gap: 10px;
+                        `}
+                      >
                         <span
-                          key={indexx}
                           css={css`
-                            margin: 0 5px;
-                            gap: 10px;
+                            width: 68px;
+                            height: 27px;
+                            padding: 5px;
+                            background-color: #eaac99;
+                            border-radius: 10px;
+                            font-size: 16px;
                           `}
                         >
-                          <span
-                            css={css`
-                              width: 68px;
-                              height: 27px;
-                              padding: 5px;
-                              background-color: #eaac99;
-                              border-radius: 10px;
-                              font-size: 16px;
-                            `}
-                          >
-                            {genre}
-                          </span>
+                          {genre}
                         </span>
-                      );
-                    }
+                      </span>
+                    );
                   })}
                 </span>
                 <span>IMDB Ratings: {movie.imdbRating}</span>
