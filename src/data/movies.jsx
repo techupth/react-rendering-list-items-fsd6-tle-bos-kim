@@ -166,7 +166,7 @@ const movies = [
   },
   {
     title: "Luke Cage",
-    year: "2016–",
+    year: "2016",
     runtime: "55 min",
     director: "N/A",
     image:
@@ -176,5 +176,8 @@ const movies = [
     imdbVotes: "N/A",
   },
 ];
+
+let sortMovie = movies.sort((a, b) => a.title - b.title);
+console.log(sortMovie);
 
 export default movies;
